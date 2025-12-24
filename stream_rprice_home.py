@@ -20685,7 +20685,7 @@ with btn_col:
 if search_clicked:
     try:
         # SQLAlchemy 엔진 생성
-        db_url = "mysql+pymysql://changthink:Sunchang11**@nasvival.ddns.net/rp"
+        db_url = "mysql+pymysql://changthink:Sunchang11**@nasvival.ddns.net:3309/rp"
         engine = create_engine(db_url)
 
         # 지역 그룹 정의
