@@ -20704,7 +20704,7 @@ def get_engine():
 
 if search_clicked:
     try:                         
-        engine = get_engine(db_url)
+        engine = get_engine()
 
         # 지역 그룹 정의
         sma = ['서울특별시', '인천광역시', '경기도']
@@ -20787,5 +20787,6 @@ if st.session_state.result_df is not None:
     else:
 
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
+
 
 
