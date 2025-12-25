@@ -20689,6 +20689,7 @@ load_dotenv()
 
 # 환경 변수 읽기
 def get_engine():
+    
     # 로컬 .env 또는 서버 환경 변수에서 가져옴
     db_host = st.secrets["DB_HOST"]
     db_user = st.secrets["DB_USER"]
@@ -20707,7 +20708,7 @@ if search_clicked:
         db_url = f"mysql+pymysql://{db_user}:{db_pw}@{db_host}:{db_port}/{db_name}"
         #db_url = "mysql+pymysql://changthink:Sunchang11**@nasvival.ddns.net:3309/rp"
                   
-        engine = create_engine(db_url)
+        engine = get_engine(db_url)
 
         # 지역 그룹 정의
         sma = ['서울특별시', '인천광역시', '경기도']
@@ -20790,3 +20791,4 @@ if st.session_state.result_df is not None:
     else:
 
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
+
