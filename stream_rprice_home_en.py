@@ -20690,11 +20690,11 @@ load_dotenv()
 # 환경 변수 읽기
 def get_engine():
     # 로컬 .env 또는 서버 환경 변수에서 가져옴
-    db_user = os.getenv("DB_USER")
-    db_pw = os.getenv("DB_PASSWORD")
-    db_host = os.getenv("DB_HOST")
-    db_port = os.getenv("DB_PORT")
-    db_name = os.getenv("DB_NAME")
+    db_host = st.secrets["DB_HOST"]
+    db_user = st.secrets["DB_USER"]
+    db_pw = st.secrets["DB_PASSWORD"]
+    db_name = st.secrets["DB_NAME"]
+    db_port = st.secrets["DB_PORT"]   
     
     # SQLAlchemy 엔진 생성
     db_url = f"mysql+pymysql://{db_user}:{db_pw}@{db_host}:{db_port}/{db_name}"
@@ -20788,4 +20788,5 @@ if st.session_state.result_df is not None:
                 use_container_width=True
             )
     else:
+
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
