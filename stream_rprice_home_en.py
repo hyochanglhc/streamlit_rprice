@@ -20703,11 +20703,7 @@ def get_engine():
 
 
 if search_clicked:
-    try:
-        # SQLAlchemy 엔진 생성
-        db_url = f"mysql+pymysql://{db_user}:{db_pw}@{db_host}:{db_port}/{db_name}"
-        #db_url = "mysql+pymysql://changthink:Sunchang11**@nasvival.ddns.net:3309/rp"
-                  
+    try:                         
         engine = get_engine(db_url)
 
         # 지역 그룹 정의
@@ -20791,4 +20787,5 @@ if st.session_state.result_df is not None:
     else:
 
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
+
 
