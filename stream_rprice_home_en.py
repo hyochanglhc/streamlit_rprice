@@ -1,5 +1,5 @@
 import streamlit as st
-import io
+import io, os
 import pandas as pd
 import pymysql
 import datetime
@@ -246,6 +246,7 @@ if st.session_state.result_df is not None:
     else:
 
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
+
 
 
 
