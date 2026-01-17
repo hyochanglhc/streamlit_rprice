@@ -20760,7 +20760,7 @@ if st.session_state.result_df is not None:
     df = st.session_state.result_df
     
     if not df.empty:
-        st.dataframe(df, use_container_width=True, height=500)
+        st.dataframe(df, use_container_width=True, height=500, hide_index=True)
         
         # 검색건수 표시
         st.markdown(f"""
@@ -20787,6 +20787,7 @@ if st.session_state.result_df is not None:
     else:
 
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
+
 
 
 
