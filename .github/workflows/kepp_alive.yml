@@ -1,0 +1,16 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # UTC 기준입니다 (한국 시간보다 9시간 느림)
+    # 아래 설정은 매일 12시간마다(0시, 6시, 12시, 18시) 실행됩니다.
+    - cron: '0 */12 * * *'
+  workflow_dispatch: # 수동으로 실행해볼 수 있게 하는 옵션
+
+jobs:
+  ping_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP Request
+        # 'YOUR_APP_URL' 부분을 실제 내 Streamlit 앱 주소로 바꾸세요!
+        run: curl -I https://rprice.streamlit.app
