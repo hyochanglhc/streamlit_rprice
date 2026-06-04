@@ -128,8 +128,8 @@ with st.container():
         dong = st.selectbox("읍면동", options=dong_options)
     with col4:
         sub_col1, sub_col2 = st.columns(2)
-        ex_min = sub_col1.selectbox("전용(min)", [10, 20, 30, 40, 59, 84], index=4)
-        ex_max = sub_col2.selectbox("전용(max)", [60, 75, 85, 100, 120, 150], index=2)
+        ex_min = sub_col1.selectbox("전용(min)", [10, 20, 30, 40, 59, 84, 120], index=4)
+        ex_max = sub_col2.selectbox("전용(max)", [60, 75, 85, 100, 120, 150, 200], index=2)
     with col5:
         default_date = (datetime.date.today() + MonthEnd(-2))
         deal_ymd = st.date_input("기준월(월말)>=", default_date)
@@ -246,6 +246,7 @@ if st.session_state.result_df is not None:
     else:
 
         st.warning("조회된 데이터가 없습니다. 기준월을 과거 날짜로 변경해 보세요.")
+
 
 
 
