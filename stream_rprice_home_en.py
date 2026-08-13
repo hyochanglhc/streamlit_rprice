@@ -67,7 +67,7 @@ def load_location_data():
         # 시군구명 추출 로직 (원본 코드 복잡성 유지)
         sigungu = ""
         dong = ""        
-        big_city = ['성남시','수원시','고양시','부천시','안양시','안산시','용인시','창원시','천안시','포항시','청주시','전주시']
+        big_city = ['성남시','수원시','고양시','부천시','안양시','안산시','용인시','창원시','천안시','포항시','청주시','전주시','화성시']
         
         if len(address_parts) == 2 and address_parts[1] in big_city:
             continue
